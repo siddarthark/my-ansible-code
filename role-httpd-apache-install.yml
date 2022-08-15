@@ -1,0 +1,6 @@
+---
+- name: install apache a.k.a httpd in webservers
+  hosts: all
+  become: true
+  roles:
+    - setup-apache

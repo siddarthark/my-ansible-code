@@ -1,0 +1,16 @@
+---
+- name: install apache2 in appservers
+  hosts: dbservers
+  become: true
+  tasks: 
+  - name: install apache2 and start
+    apt:
+      name: apache2
+      state: present
+    notify: start apache2 service
+  handlers:
+  - name: start apache2 service
+    service:
+      name: apache2
+      state: started  
+          

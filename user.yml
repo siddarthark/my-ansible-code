@@ -1,0 +1,11 @@
+---
+- name: create user using vars
+  hosts: dbservers
+  become: true
+  vars_files:
+    - name
+  tasks:
+  - name: create bhima user
+    apt: 
+      name: "{{ package }}"
+      state: absent 

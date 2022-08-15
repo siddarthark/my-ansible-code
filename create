@@ -1,0 +1,10 @@
+---
+- name: creating user with variable
+  hosts: all
+  become: true
+  vars: 
+    user: bhima
+  tasks:
+  - name: create user 
+    user: 
+      name: {{ user }}

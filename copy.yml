@@ -1,0 +1,13 @@
+---
+- name: copy file from src to destiny
+  hosts: all
+  become: true
+
+  tasks:
+  - name: copy delete file to destiny
+    copy:
+      src: /opt/ansible/module.yml
+      dest: /home/ansadmin/
+      mode: '777'
+      owner: ansadmin
+

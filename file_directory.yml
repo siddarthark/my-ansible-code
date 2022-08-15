@@ -1,0 +1,12 @@
+---
+- name: to create a simple directory dir in all servers
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+  - name: to create file sid
+    file:
+      path: /home/ansadmin/lala
+      state: touch
+      owner: ansadmin
+      mode: '777'

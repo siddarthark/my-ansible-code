@@ -1,0 +1,8 @@
+---
+- name: this playbook is to create user called amma in all machines
+  hosts: all
+  become: true
+  tasks:
+  - name: creating the user amma
+    user:
+      name: amma
